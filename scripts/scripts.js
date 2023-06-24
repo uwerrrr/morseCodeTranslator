@@ -4,14 +4,30 @@ import * as ut from "./modules/unitTest.js";
 
 const testEng = "SOS test";
 
-const WoToMoDataChars = Object.keys(data.WoToMoData);
-
+const WoToMoDataCharKeys = Object.keys(data.WoToMoData);
+// ["A","B","C"]
 // WoToMoDataChars.forEach((char) => {
 
 // });
 
 const TranslateWoToMo = (latin) => {
-  chars = latin.split("");
-  console.log(chars);
+  const latinChars = latin.toUpperCase().split("");
+  // [S,O,S, ,T,E,S,T]
+  const morseChars = latinChars.map((latinChar) => {
+    // latinChar = "S"
+    const morseChar = WoToMoDataCharKeys.reduce((acc, charKey) => {
+      // ["A"] in ["A","B","C"]
+      if (latinChar === charKey) {
+        acc = data.WoToMoData[charKey];
+      } else if (latinChar === " ") {
+        acc = latinChar + latinChar; // 2 spaces
+      }
+      return acc;
+    }, "");
+    return morseChar;
+  });
+  return morseChars.join(" ");
 };
-TranslateWoToMo(testEng);
+
+const testResult = TranslateWoToMo(testEng);
+console.log(testResult);
