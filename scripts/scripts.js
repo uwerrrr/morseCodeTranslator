@@ -1,6 +1,7 @@
 import * as data from "./modules/data.js";
 import * as dom from "./modules/dom-utils.js";
 import * as ut from "./modules/unitTest.js";
+import * as validate from "./modules/validation.js";
 
 const testLatin = "S OS     test";
 const testMorse = "...      --- ... / - . ... -";
@@ -105,23 +106,6 @@ const translateWoToMo = (latinSen) => {
 /////////////////////
 //// testing area
 //
-
-// const inputString =
-//   "... --- ...     - . ... -    word1     word2   word3    word4    ...";
-// const regexPattern = /\b\S+(?:\s{3,}\S+)*\b/g;
-// const matches = inputString.match(regexPattern);
-
-// console.log(matches);
-
-// try {
-//   let testResult = getValFromObj(")", data.WoToMoData);
-//   console.log("testResult ", testResult);
-// } catch (e) {
-//   console.log("e.message  ", e.message);
-// }
-
-// console.log(".-.   -- . / ..- -".split("/"));
-// console.log(".-.   -- . / ..- -".split("/")[0].split(" "));
 
 console.log("translate ", testMorse);
 console.log(translateMoToWo(testMorse));
