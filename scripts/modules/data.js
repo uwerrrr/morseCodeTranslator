@@ -10,6 +10,16 @@ const flipObj = (Obj) => {
 
 // Words to Morse Code data
 export const WoToMoData = {
+  0: "-----",
+  1: ".----",
+  2: "..---",
+  3: "...--",
+  4: "....-",
+  5: ".....",
+  6: "-....",
+  7: "--...",
+  8: "---..",
+  9: "----.",
   A: ".-",
   B: "-...",
   C: "-.-.",
@@ -39,4 +49,4 @@ export const WoToMoData = {
 
 // Morse Code to Words data
 export const MoToWoData = flipObj(WoToMoData);
-// console.log(Object.keys(MoToWoData));
+// console.log(Object.keys(WoToMoData));
