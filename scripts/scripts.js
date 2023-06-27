@@ -5,6 +5,9 @@ import * as validate from "./modules/validation.js";
 
 const testLatin = "S OS     test";
 const testMorse = "...      --- ... / - . ... -";
+const testEmpty = "          ";
+const testMoErr = "...    !  --- ... / - . ... -";
+const testLaErr = "S OS  !   test";
 
 // const regex = /[A-Z]/g; // /[A-Z0-9]/g;
 // const regex = /\S+/g;
@@ -19,9 +22,9 @@ const removeBlankItem = (arr) => {
 // function getting value in Obj
 const getValFromObj = (keyToFind, Obj) => {
   const objKeys = Object.keys(Obj); // array of keys
-  if (!objKeys.includes(keyToFind)) {
-    throw new Error(`"${keyToFind}" is not a valid input`);
-  }
+
+  validate.notInObjErr(keyToFind, objKeys);
+
   const foundVal = objKeys.reduce((acc, key) => {
     if (keyToFind === key) {
       acc = Obj[key];
@@ -52,7 +55,10 @@ const translateChars = (toTranslateChars, data) => {
 
 // function translating Morse to Words
 const translateMoToWo = (morseSen) => {
+  validate.emptyErr(morseSen);
+
   const morseWords = morseSen.split("/"); //['...  --- ...' , '- . ... -']
+
   const latinWords = morseWords.map((morseWord) => {
     const morseChars = morseWord.split(" ");
     // ['...', '', '---', '...' ]
@@ -76,6 +82,8 @@ const translateMoToWo = (morseSen) => {
 
 // function translating Words to Morse
 const translateWoToMo = (latinSen) => {
+  validate.emptyErr(latinSen);
+
   // `SOS     test`
   const latinWords = latinSen.toUpperCase().split(" ");
   //[ 'SOS', '', '', '', '', 'TEST' ]
@@ -107,8 +115,21 @@ const translateWoToMo = (latinSen) => {
 //// testing area
 //
 
-console.log("translate ", testMorse);
-console.log(translateMoToWo(testMorse));
+try {
+  console.log("translate ", testMorse);
+  console.log(translateMoToWo(testMorse));
 
-console.log("translate ", testLatin);
-console.log(translateWoToMo(testLatin));
+  console.log("translate ", testLatin);
+  console.log(translateWoToMo(testLatin));
+
+  // console.log("translate ", testEmpty);
+  // console.log(translateMoToWo(testEmpty));
+
+  // console.log("translate ", testMoErr);
+  // console.log(translateMoToWo(testMoErr));
+
+  console.log("translate ", testLaErr);
+  console.log(translateWoToMo(testLaErr));
+} catch (e) {
+  console.log(e.message);
+}
