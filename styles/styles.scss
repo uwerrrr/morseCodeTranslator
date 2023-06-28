@@ -1,0 +1,58 @@
+body {
+  background-color: rgb(232, 211, 185);
+  padding: 0;
+  margin: 0;
+  font-size: 20px;
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$fontSize: 20px;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+
+  &__item {
+    margin: 10px 0px;
+    font-size: $fontSize;
+  }
+
+  &__label {
+    font-weight: bold;
+    font-size: $fontSize;
+  }
+  &__output {
+    pointer-events: none;
+    background-color: #dedddd;
+  }
+
+  &__btn {
+    color: rgb(28, 92, 198);
+    border: 1px solid rgb(28, 92, 198);
+    border-radius: 5px;
+    font-size: $fontSize;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    &:hover {
+      background-color: rgb(28, 92, 198);
+      color: white;
+      transform: scale(1.1);
+    }
+  }
+}

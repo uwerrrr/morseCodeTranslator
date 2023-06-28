@@ -5,7 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
     <script src="./scripts/scripts.js" defer type="module"></script>
+
+    <link rel="stylesheet" href="./styles/styles.css" />
+
     <title>Morse Code Translator</title>
   </head>
-  <body></body>
+  <body>
+    <main class="main">
+      <form id="translateForm" class="form">
+        <label for="input" class="form__item form__label">Input</label>
+        <textarea
+          class="form__input form__item"
+          name="input"
+          id="input"
+          cols="50"
+          rows="4"
+          placeholder="Type text or 
+Morse code using '.', '-' or '_',using a spaces between letters and '/' between words."
+        ></textarea>
+        <button id="translateBtn" class="form__btn form__item">
+          Translate
+        </button>
+        <label for="output" class="form__item form__label">Output</label>
+        <textarea
+          class="form__output form__item"
+          name="output"
+          id="output"
+          cols="50"
+          rows="4"
+        ></textarea>
+      </form>
+    </main>
+  </body>
 </html>
