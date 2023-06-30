@@ -1,6 +1,5 @@
 import * as data from "./modules/data.js";
 import * as dom from "./modules/dom-utils.js";
-import * as ut from "./modules/unitTest.js";
 import * as validate from "./modules/validation.js";
 import * as translate from "./modules/translating-functions.js";
 
@@ -24,7 +23,6 @@ dom.translateBtn.addEventListener("click", (event) => {
   try {
     validate.emptyErr(inputVal);
     console.log("inputVal: ", inputVal);
-    
 
     if (isMorse(inputVal)) {
       output = translate.translateMoToWo(inputVal);
@@ -34,6 +32,9 @@ dom.translateBtn.addEventListener("click", (event) => {
       dom.output.value = output;
     }
   } catch (error) {
-    dom.addTextDom(dom.errorDiv, error.message, "div");
+    const instruction = `Please type text (A-Z and 0-1) or  \n Morse code using '.' , '-' or '_' , using a spaces between letters and '/' between words.`;
+    const message = `${error.message}! \n ${instruction}`;
+    console.log(message);
+    dom.addTextDom(dom.errorDiv, message, "div");
   }
 });
