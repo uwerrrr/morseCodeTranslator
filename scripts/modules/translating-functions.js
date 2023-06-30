@@ -103,7 +103,7 @@ export const translateWoToMo = (latinSen) => {
 //// testing area
 //
 const testLatin = "S OS     test";
-const testMorse = "...      --- ... / - . ... -";
+const testMorse = "\n...      --- ... / - . ... -";
 const testEmpty = "          ";
 const testMoErr = "...    !  --- ... / - . ... -";
 const testLaErr = "S OS  !   test";
@@ -118,8 +118,8 @@ try {
   // console.log("translate ", testEmpty);
   // console.log(translateMoToWo(testEmpty));
 
-  // console.log("translate ", testMoErr);
-  // console.log(translateMoToWo(testMoErr));
+  console.log("translate ", testMoErr);
+  console.log(translateWoToMo(testMoErr));
 
   console.log("translate ", testLaErr);
   console.log(translateWoToMo(testLaErr));

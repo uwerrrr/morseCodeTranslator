@@ -6,7 +6,7 @@ body {
 }
 
 .main {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   padding: 0;
   margin: 0;
@@ -23,6 +23,7 @@ $fontSize: 20px;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  width: 70%;
 
   &__item {
     margin: 10px 0px;
@@ -36,6 +37,14 @@ $fontSize: 20px;
   &__output {
     pointer-events: none;
     background-color: #dedddd;
+
+    width: 100%;
+    min-height: 150px;
+  }
+
+  &__input {
+    width: 100%;
+    min-height: 150px;
   }
 
   &__btn {

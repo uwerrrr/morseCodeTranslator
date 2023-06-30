@@ -18,21 +18,19 @@
           class="form__input form__item"
           name="input"
           id="input"
-          cols="50"
-          rows="4"
-          placeholder="Type text or 
+          placeholder="Type text (A-Z and 0-1) or 
 Morse code using '.', '-' or '_',using a spaces between letters and '/' between words."
         ></textarea>
         <button id="translateBtn" class="form__btn form__item">
           Translate
         </button>
+
         <label for="output" class="form__item form__label">Output</label>
+        <div class="form__item form__err" id="errorDiv"></div>
         <textarea
           class="form__output form__item"
           name="output"
           id="output"
-          cols="50"
-          rows="4"
         ></textarea>
       </form>
     </main>
