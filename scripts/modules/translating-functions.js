@@ -1,8 +1,8 @@
 import * as data from "./data.js";
 import * as validate from "./validation.js";
 
-// function removing blank item in an array
-const removeBlankItem = (arr) => {
+// function removing blank items ('') in an array
+const removingBlankItem = (arr) => {
   const cleanArr = arr.filter((item) => item !== "");
   return cleanArr;
 };
@@ -36,18 +36,21 @@ const translateChars = (toTranslateChars, data) => {
   });
   // return Array of translated char
 
-  const translatedCharsClean = removeBlankItem(translatedChars);
+  // const translatedCharsClean = removingBlankItem(translatedChars);
 
-  return translatedCharsClean;
+  return translatedChars;
 };
 
 // function translating Morse to Words
 export const translateMoToWo = (morseSen) => {
-  validate.emptyErr(morseSen);
+  const morseSenCleaned = morseSen.replaceAll("\n", "/");
+  // replace all next line char
 
-  const morseWords = morseSen.split("/"); //['...  --- ...' , '- . ... -']
+  const morseWords = morseSenCleaned.split("/"); //['...  --- ...' , '- . ... -']
 
-  const latinWords = morseWords.map((morseWord) => {
+  const morseWordsClean = removingBlankItem(morseWords);
+
+  const latinWords = morseWordsClean.map((morseWord) => {
     const morseChars = morseWord.split(" ");
     // ['...', '', '---', '...' ]
 
@@ -70,13 +73,14 @@ export const translateMoToWo = (morseSen) => {
 
 // function translating Words to Morse
 export const translateWoToMo = (latinSen) => {
-  validate.emptyErr(latinSen);
+  const latinSenCleaned = latinSen.replaceAll("\n", " ");
+  // replace all next line char
 
   // `SOS     test`
-  const latinWords = latinSen.toUpperCase().split(" ");
+  const latinWords = latinSenCleaned.toUpperCase().split(" ");
   //[ 'SOS', '', '', '', '', 'TEST' ]
 
-  const latinWordsClean = removeBlankItem(latinWords);
+  const latinWordsClean = removingBlankItem(latinWords);
 
   const morseWords = latinWordsClean.map((latinWord) => {
     const latinChars = latinWord.split("");
