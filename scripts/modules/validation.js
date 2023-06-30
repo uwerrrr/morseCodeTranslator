@@ -23,9 +23,9 @@ export const notInObjErr = (keyToFind, objKeys) => {
     if (translateFrom === "latin") {
       throw new Error(`There is no Morse code for "${keyToFind}"`);
     }
-    // if (translateFrom === "morse") {
-    //   throw new Error(`"${keyToFind}" is not a valid Morse code`);
-    // }
+    if (translateFrom === "morse") {
+      throw new Error(`"${keyToFind}" is not a valid Morse code`);
+    }
     if (translateFrom === "input") {
       throw new Error(`"${keyToFind}" is not a valid input`);
     }
