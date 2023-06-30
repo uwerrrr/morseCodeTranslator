@@ -11,8 +11,21 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.title {
+  width: 70%;
+}
+.title h6 {
+  text-align: end;
+}
+
+.code-text {
+  font-family: "Outfit", sans-serif;
+  font-family: "Source Code Pro", monospace;
 }
 
 .form {
@@ -31,7 +44,6 @@ body {
   font-size: 20px;
 }
 .form__output {
-  pointer-events: none;
   background-color: #dedddd;
   width: 100%;
   min-height: 150px;

@@ -12,8 +12,22 @@ body {
   margin: 0;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.title {
+  width: 70%;
+
+  h6 {
+    text-align: end;
+  }
+}
+
+.code-text {
+  font-family: "Outfit", sans-serif;
+  font-family: "Source Code Pro", monospace;
 }
 
 $fontSize: 20px;
@@ -35,7 +49,6 @@ $fontSize: 20px;
     font-size: $fontSize;
   }
   &__output {
-    pointer-events: none;
     background-color: #dedddd;
 
     width: 100%;

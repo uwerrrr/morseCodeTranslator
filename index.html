@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400;500;600;700&family=Source+Code+Pro:ital,wght@0,200;1,200;1,500&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="./scripts/scripts.js" defer type="module"></script>
 
     <link rel="stylesheet" href="./styles/styles.css" />
@@ -12,6 +20,11 @@
   </head>
   <body>
     <main class="main">
+      <div class="title">
+        <h1>Morse <span class="code-text">-.-. --- -.. . </span>Translator</h1>
+        <h6>Made by Oscar NGUYEN</h6>
+      </div>
+
       <form id="translateForm" class="form">
         <label for="input" class="form__item form__label">Input</label>
         <textarea
@@ -31,6 +44,7 @@ Morse code using '.', '-' or '_',using a spaces between letters and '/' between 
           class="form__output form__item"
           name="output"
           id="output"
+          readonly
         ></textarea>
       </form>
     </main>
