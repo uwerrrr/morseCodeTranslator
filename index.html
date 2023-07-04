@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;400;500;600;700&family=Source+Code+Pro:ital,wght@0,200;1,200;1,500&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="./scripts/scripts.js" defer type="module"></script>
+
+    <link rel="stylesheet" href="./styles/styles.css" />
+
+    <title>Morse Code Translator</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="title">
+        <h1>Morse <span class="code-text">-.-. --- -.. . </span>Translator</h1>
+        <h6>Made by Oscar NGUYEN</h6>
+      </div>
+
+      <form id="translateForm" class="form">
+        <label for="input" class="form__item form__label">Input</label>
+        <textarea
+          class="form__input form__item"
+          name="input"
+          id="input"
+          placeholder="Type text (A-Z and 0-1) or 
+Morse code using '.', '-' or '_',using a spaces between letters and '/' between words."
+        ></textarea>
+        <button id="translateBtn" class="form__btn form__item">
+          Translate
+        </button>
+
+        <label for="output" class="form__item form__label">Output</label>
+        <div class="form__item form__err" id="errorDiv"></div>
+        <textarea
+          class="form__output form__item"
+          name="output"
+          id="output"
+          readonly
+        ></textarea>
+      </form>
+    </main>
+  </body>
+</html>
