@@ -102,31 +102,3 @@ export const translateWoToMo = (latinSen) => {
   return morseSen;
 };
 // '...   --- ... / - . ... -'
-
-/////////////////////
-//// testing area
-//
-const testLatin = "S OS     test";
-const testMorse = "\n...      --- ... / - . ... -";
-const testEmpty = "          ";
-const testMoErr = "...    !  --- ... / - . ... -";
-const testLaErr = "S OS  !   test";
-
-try {
-  console.log("translate ", testMorse);
-  console.log(translateMoToWo(testMorse));
-
-  console.log("translate ", testLatin);
-  console.log(translateWoToMo(testLatin));
-
-  // console.log("translate ", testEmpty);
-  // console.log(translateMoToWo(testEmpty));
-
-  console.log("translate ", testMoErr);
-  console.log(translateWoToMo(testMoErr));
-
-  console.log("translate ", testLaErr);
-  console.log(translateWoToMo(testLaErr));
-} catch (e) {
-  console.log(e.message);
-}

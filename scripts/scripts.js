@@ -11,7 +11,6 @@ const isMorse = (string) => {
 };
 
 dom.translateBtn.addEventListener("click", (event) => {
-  console.log("btn clicked");
   event.preventDefault();
 
   dom.errorDiv.innerHTML = "";
@@ -22,7 +21,6 @@ dom.translateBtn.addEventListener("click", (event) => {
 
   try {
     validate.emptyErr(inputVal);
-    console.log("inputVal: ", inputVal);
 
     if (isMorse(inputVal)) {
       output = translate.translateMoToWo(inputVal);
@@ -34,7 +32,7 @@ dom.translateBtn.addEventListener("click", (event) => {
   } catch (error) {
     const instruction = `Please type text (A-Z and 0-1) or  \n Morse code using '.' , '-' or '_' , using a spaces between letters and '/' between words.`;
     const message = `${error.message}! \n ${instruction}`;
-    console.log(message);
+
     dom.addTextDom(dom.errorDiv, message, "div");
   }
 });
