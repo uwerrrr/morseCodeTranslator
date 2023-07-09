@@ -3,6 +3,10 @@
 A simple translator between Latin characters and Morse code.
 Created by Oscar NGUYEN!
 
+Tech stacks: JavaScript, HTML, SCSS, TDD
+
+Deyployed version: https://oscar-morsecode.netlify.app
+
 **Note:**
 
 - Next line is transformed into single space.
