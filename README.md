@@ -5,7 +5,7 @@ Created by Oscar NGUYEN!
 
 Tech stacks: JavaScript, HTML, SCSS, TDD
 
-Deyployed version: https://oscar-morsecode.netlify.app
+Deployed version: https://oscar-morsecode.netlify.app
 
 **Note:**
 
