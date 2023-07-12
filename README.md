@@ -1,6 +1,8 @@
 # Morse Code Translator
 
-A simple translator between Latin characters and Morse code.
+A simple translator between Latin characters and Morse code (both ways).
+Demonstrating error handling and writing tests.
+
 Created by Oscar NGUYEN!
 
 Tech stacks: JavaScript, HTML, SCSS, TDD
